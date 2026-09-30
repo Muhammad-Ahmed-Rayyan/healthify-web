@@ -3,7 +3,7 @@
     "name": "Healthify | Healthy Meals, Happier Lives",
     "slug": "healthify-web",
     "version": "1.0.0",
-    "description": "Healthify - Fresh, chef-prepared healthy meal plans delivered to your door in Dubai.",
+    "description": "Fresh, chef-prepared healthy meals delivered across Dubai. Explore customized meal plans from Healthify.",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -28,9 +28,17 @@
       "favicon": "./assets/favicon.png",
       "name": "Healthify | Healthy Meals, Happier Lives",
       "shortName": "Healthify",
-      "description": "Healthify - Fresh, chef-prepared healthy meal plans delivered to your door in Dubai.",
+      "description": "Fresh, chef-prepared healthy meals delivered across Dubai. Explore customized meal plans from Healthify.",
       "themeColor": "#1F3A2B",
-      "backgroundColor": "#FAFAF5"
+      "backgroundColor": "#FAFAF5",
+      "lang": "en",
+      "meta": {
+        "description": "Fresh, chef-prepared healthy meals delivered across Dubai. Explore customized meal plans from Healthify.",
+        "og:title": "Healthify | Healthy Meals, Happier Lives",
+        "og:description": "Fresh, chef-prepared healthy meals delivered across Dubai. Explore customized meal plans from Healthify.",
+        "og:type": "website",
+        "og:image": "/assets/images/Hero_bowl.jpg"
+      }
     },
     "plugins": [
       "expo-font",

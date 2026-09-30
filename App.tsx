@@ -50,16 +50,18 @@ export default function App() {
         contentContainerStyle={{ flexGrow: 1 }}
         showsVerticalScrollIndicator={false}
       >
-        <Hero />
-        <Stats />
-        <About />
-        <Services />
-        <Advantages />
-        <Plans />
-        <Process />
-        <Testimonials />
-        <Faq />
-        <CtaBanner />
+        <View role="main" aria-label="Main content">
+          <Hero />
+          <Stats />
+          <About />
+          <Services />
+          <Advantages />
+          <Plans />
+          <Process />
+          <Testimonials />
+          <Faq />
+          <CtaBanner />
+        </View>
         <Footer />
       </ScrollView>
       <WhatsAppButton />

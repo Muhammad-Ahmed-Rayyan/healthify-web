@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react';
-import { View, Text, Pressable, Platform } from 'react-native';
+import { View, Text, Pressable, Platform, ViewStyle } from 'react-native';
 import { Menu, X } from 'lucide-react-native';
 import { Container } from './Container';
 import { Button } from '../ui/Button';
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
         role="banner"
         className="w-full bg-white border-b border-sage-200 z-50"
         style={{
-          position: Platform.OS === 'web' ? ('sticky' as any) : 'relative',
+          position: (Platform.OS === 'web' ? 'sticky' : 'relative') as unknown as ViewStyle['position'],
           top: 0,
           height: 64,
           justifyContent: 'center',
@@ -59,7 +59,7 @@ export const Header: React.FC = () => {
 
           {/* Desktop Nav */}
           {isDesktop ? (
-            <View className="flex-row items-center gap-6">
+            <View role="navigation" aria-label="Main Navigation" className="flex-row items-center gap-6">
               {NAV_ITEMS.map((item) => (
                 <Pressable
                   key={item.sectionId}

@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Text, Pressable, Platform } from 'react-native';
+import { View, Text, Pressable, Platform, ViewStyle } from 'react-native';
 import { NAV_ITEMS } from '../../data/nav';
 import { Button } from '../ui/Button';
 import { COLORS } from '../../constants/theme';
@@ -31,15 +31,19 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
 
   if (!open) return null;
 
+  const fixedPosition = (Platform.OS === 'web' ? 'fixed' : 'absolute') as unknown as ViewStyle['position'];
+
   return (
     <>
       {/* Backdrop */}
       <Pressable
         onPress={onClose}
         style={{
-          position: Platform.OS === 'web' ? ('fixed' as any) : 'absolute',
-          inset: 0,
+          position: fixedPosition,
           top: 64,
+          left: 0,
+          right: 0,
+          bottom: 0,
           backgroundColor: 'rgba(0,0,0,0.3)',
           zIndex: 40,
         }}
@@ -47,9 +51,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
       />
       {/* Panel */}
       <View
+        role="navigation"
+        aria-label="Mobile Navigation"
         className="bg-white border-b border-sage-200 z-50 w-full"
         style={{
-          position: Platform.OS === 'web' ? ('fixed' as any) : 'absolute',
+          position: fixedPosition,
           top: 64,
           left: 0,
           right: 0,
@@ -60,7 +66,6 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({
           elevation: 8,
         }}
         aria-expanded={open}
-        role="navigation"
       >
         <View className="px-6 py-4">
           {NAV_ITEMS.map((item) => (

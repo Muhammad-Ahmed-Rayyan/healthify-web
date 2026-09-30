@@ -1,7 +1,13 @@
 {
   "name": "healthify-web",
   "version": "1.0.0",
+  "description": "Fresh, chef-prepared healthy meals delivered across Dubai. Explore customized meal plans from Healthify.",
   "main": "index.ts",
+  "scripts": {
+    "dev": "expo start --web",
+    "start": "expo start --web",
+    "build": "expo export --platform web"
+  },
   "dependencies": {
     "@expo-google-fonts/aref-ruqaa": "^0.4.1",
     "@expo-google-fonts/caveat": "^0.4.2",
@@ -12,14 +18,11 @@
     "expo": "~57.0.26",
     "expo-font": "~57.0.4",
     "expo-image": "~57.0.5",
-    "expo-status-bar": "~57.0.1",
     "lucide-react-native": "^1.49.0",
     "nativewind": "^4.0.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-native": "0.86.3",
-    "react-native-reanimated": "4.5.1",
-    "react-native-safe-area-context": "~5.7.0",
     "react-native-svg": "15.15.4",
     "react-native-web": "^0.21.2",
     "tailwindcss": "^3.4.17"
@@ -27,14 +30,6 @@
   "devDependencies": {
     "@types/react": "~19.2.2",
     "typescript": "~6.0.3"
-  },
-  "scripts": {
-    "dev": "expo start --web",
-    "build": "expo export --platform web",
-    "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
   },
   "private": true
 }

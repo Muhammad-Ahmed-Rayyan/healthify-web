@@ -1,140 +1,234 @@
-# Healthify — Healthy Meal Plans Landing Page
+# Healthify
 
-A modern, responsive landing page for **Healthify**, a premium meal-prep subscription service based in Dubai, UAE. Built with **React Native for Web via Expo** and styled with **NativeWind v4** (Tailwind CSS 3.x).
+A modern, responsive landing page for a fresh, chef-prepared healthy meal delivery service based in Dubai.
 
----
+## Live Demo
 
-## 🚀 Live Demo & Deployment
+- Live URL: https://healthify-web.vercel.app
+- GitHub Repository: https://github.com/<your-username>/healthify-web
 
-- **Live URL**: [https://healthify-web.vercel.app](https://healthify-web.vercel.app) *(Deploy via Vercel)*
-- **Repository**: [https://github.com/Muhammad-Ahmed-Rayyan/healthify-web](https://github.com/Muhammad-Ahmed-Rayyan/healthify-web)
+## Screenshot
 
----
+![Healthify landing page](docs/screenshot.png)
 
-## 🛠️ Tech Stack
+## Overview
 
-| Layer | Technology |
-|---|---|
-| **Framework** | [React Native for Web](https://necolas.github.io/react-native-web/) via [Expo](https://expo.dev) (SDK 57) |
-| **Language** | [TypeScript](https://www.typescriptlang.org/) (Strict Mode) |
-| **Styling** | [NativeWind v4](https://www.nativewind.dev/) with [Tailwind CSS 3.x](https://tailwindcss.com/) |
-| **Typography** | `@expo-google-fonts` (DM Serif Display, Inter, Caveat, Aref Ruqaa) |
-| **Icons** | `lucide-react-native` + `react-native-svg` |
-| **Hosting** | [Vercel](https://vercel.com) (Static SPA Export) |
+Healthify is a high-performance, responsive landing page recreated from a supplied design specification for a premium healthy meal delivery brand operating across Dubai, United Arab Emirates. Built as a comprehensive frontend technical assessment, the application showcases modular UI architecture, cross-platform component design using React Native for Web, strict TypeScript typing, pixel-accurate design token fidelity, and modern web accessibility practices.
 
----
+## Features
 
-## ✨ Features & Sections
+- 12 comprehensive landing page sections:
+  - Sticky Navigation Header with live section scroll-spy indicator and mobile dropdown
+  - Full-Bleed Hero section with dual-action CTAs and value proposition badges
+  - Social Proof Stats banner with key business milestones
+  - Brand Story and About Us section with layered visual media
+  - Services Showcase featuring custom meal delivery options and hover states
+  - Core Advantages grid detailing farm-fresh sourcing, chef curation, and sustainability
+  - Growth and Subscription Plans with pricing cards and highlighted popular tiers
+  - 3-Step Process section outlining ordering, customization, and daily doorstep delivery
+  - Customer Testimonials with star ratings and regional client reviews
+  - Interactive FAQ accordion supporting single-open expansion and full keyboard navigation
+  - High-impact Call-to-Action banner driving conversion
+  - Comprehensive 4-column Footer with contact details, quick links, and social channels
+- Floating WhatsApp quick-contact button with direct international messaging integration
+- Full responsive adaptation across mobile (320px-414px), tablet (768px-820px), and desktop (1024px-1920px) screens
+- Single-page smooth scroll navigation with 64px sticky header compensation
+- Comprehensive accessibility support including semantic ARIA attributes, landmarks, and keyboard focus states
+- Strict TypeScript implementation with 100% type safety and zero any types
 
-The single-page layout implements all 12 sections matching the visual design:
+## Tech Stack
 
-1. **Header (Sticky)**: Responsive navigation with logo (Arabic wordmark "صحتي" + HEALTHIFY), scroll-spy active state, smooth-scroll links, and a mobile slide-down menu.
-2. **Hero Section**: Two-tone editorial serif headline ("Healthy Meals, Happier Lives"), value proposition, dual CTAs, benefit badges, hero bowl showcase with handwritten accent ("Good Food Brightens You"), and floating badge.
-3. **Stats / Trust Bar**: 4 key metrics with icons (1M+ Meals, 30K+ Customers, 4.8/5 Rating, 550+ Corporate Clients).
-4. **About Healthify**: Overlapping food & chef photography, brand story, core commitments, and floating trust badge.
-5. **Services**: 4 interactive cards with hover lift (Ready-to-Eat, Custom Plans, Weight Management, High-Protein).
-6. **Advantages (Why Choose Us)**: Value pillars (Premium Quality, Health Focused, Convenient Delivery, Flexible Plans).
-7. **Growth Plans (Pricing)**: 3 tier plan cards (Essential, Balanced [Most Popular ★], Performance) with feature checklists + 1 tall promo image card ("Invest in a Healthier You").
-8. **Our Process (How It Works)**: 3-step walkthrough (Choose Plan → Fresh Preparation → Convenient Delivery) with step badges and desktop arrow dividers.
-9. **Customer Stories (Testimonials)**: 3 verified Dubai customer reviews with 5-star ratings and avatars.
-10. **FAQ (Accordion)**: Accessible, single-open accordion answering key delivery, customization, and subscription questions.
-11. **Final CTA Banner**: High-contrast dark forest overlay banner with primary call-to-action.
-12. **Footer & Floating WhatsApp**: 4 structured link columns, social media icons, copyright bar, and a persistent floating WhatsApp contact button (`+971 50 262 6144`).
+- Framework: Expo (SDK 52/53, Metro bundler for web)
+- UI Library: React Native for Web (React 19)
+- Styling: NativeWind v4 (Tailwind CSS v3)
+- Language: TypeScript 5.8 (Strict Mode enabled)
+- Icons: Lucide React Native, React Native SVG
+- Fonts: Expo Font (@expo-google-fonts for DM Serif Display, Inter, Caveat, and Aref Ruqaa)
+- Media: Expo Image with responsive object-fit fallbacks
+- Deployment: Vercel Static Hosting with automated cache optimization
 
----
+## Why Expo and React Native for Web
 
-## 📁 Project Structure
+The technical assessment required building the interface using React Native for Web to demonstrate cross-platform frontend architecture. Expo was selected as the application framework because it simplifies web bundling, font loading, asset optimization, and production static exports while maintaining seamless compatibility with native React Native components.
+
+## Project Structure
 
 ```
 healthify-web/
-├── App.tsx                     # Main application entry (all 12 sections)
-├── index.ts                    # Expo root component registration
-├── app.json                    # Expo configuration (web single output, metadata)
-├── babel.config.js             # Babel setup with NativeWind preset
-├── metro.config.js             # Metro bundler wrapped with NativeWind
-├── tailwind.config.js          # Healthify design tokens, colors & typography
-├── global.css                  # Tailwind CSS base directives
-├── nativewind-env.d.ts         # NativeWind TypeScript definitions
-├── vercel.json                 # Vercel SPA rewrites and caching headers
 ├── assets/
 │   ├── favicon.png
 │   ├── icon.png
-│   └── images/                 # Optimized .webp food photography & avatars
-│       └── IMAGES_REQUIRED.md  # Checklist for production image assets
-├── docs/                       # Assessment specifications (DESIGN, FEATURES, PHASES)
-└── src/
-    ├── components/
-    │   ├── ui/                 # Reusable primitives (Button, TextLink, Eyebrow, Badge, Rating...)
-    │   ├── cards/              # Domain cards (ServiceCard, PlanCard, StatItem, TestimonialCard...)
-    │   ├── layout/             # Layout shells (Header, MobileMenu, Footer, WhatsAppButton, Section, Container)
-    │   └── sections/           # 12 page sections (Hero, Stats, About, Services, Plans, Faq...)
-    ├── constants/              # Design tokens (theme.ts, sectionIds.ts, images.ts)
-    ├── data/                   # Structured data arrays (nav, stats, services, plans, faqs, footer)
-    ├── hooks/                  # Custom hooks (useBreakpoint, useScrollSpy, useReducedMotion)
-    ├── types/                  # Shared TypeScript interfaces
-    └── utils/                  # Helpers (scrollToSection, formatPrice)
+│   ├── splash-icon.png
+│   └── images/
+│       ├── About_bowl.jpg
+│       ├── About_chef.jpg
+│       ├── Avatar_ahmed.jpg
+│       ├── Avatar_fatima.jpg
+│       ├── Avatar_sara.jpg
+│       ├── CTA_bg.jpg
+│       ├── Hero_bowl.jpg
+│       ├── Plans_promo.jpg
+│       ├── Service_custom_plans.jpg
+│       ├── Service_protein.jpg
+│       ├── Service_ready_meals.jpg
+│       └── Service_weights.jpg
+├── docs/
+│   ├── DESIGN.md
+│   ├── FEATURES.md
+│   └── screenshot.png
+├── src/
+│   ├── components/
+│   │   ├── cards/
+│   │   │   ├── AdvantageCard.tsx
+│   │   │   ├── PlanCard.tsx
+│   │   │   ├── PromoImageCard.tsx
+│   │   │   ├── ServiceCard.tsx
+│   │   │   ├── StatItem.tsx
+│   │   │   └── TestimonialCard.tsx
+│   │   ├── layout/
+│   │   │   ├── Container.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Header.tsx
+│   │   │   ├── MobileMenu.tsx
+│   │   │   ├── Section.tsx
+│   │   │   └── WhatsAppButton.tsx
+│   │   ├── sections/
+│   │   │   ├── About.tsx
+│   │   │   ├── Advantages.tsx
+│   │   │   ├── CtaBanner.tsx
+│   │   │   ├── Faq.tsx
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Plans.tsx
+│   │   │   ├── Process.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── Stats.tsx
+│   │   │   └── Testimonials.tsx
+│   │   └── ui/
+│   │       ├── Badge.tsx
+│   │       ├── Button.tsx
+│   │       ├── CoverImage.tsx
+│   │       ├── Eyebrow.tsx
+│   │       ├── IconCircle.tsx
+│   │       ├── Rating.tsx
+│   │       ├── SectionHeading.tsx
+│   │       ├── TextLink.tsx
+│   │       └── WhatsAppIcon.tsx
+│   ├── constants/
+│   │   ├── images.ts
+│   │   ├── sectionIds.ts
+│   │   └── theme.ts
+│   ├── data/
+│   │   ├── advantages.ts
+│   │   ├── faqs.ts
+│   │   ├── footer.ts
+│   │   ├── nav.ts
+│   │   ├── plans.ts
+│   │   ├── services.ts
+│   │   ├── stats.ts
+│   │   ├── steps.ts
+│   │   └── testimonials.ts
+│   ├── hooks/
+│   │   ├── useBreakpoint.ts
+│   │   ├── useReducedMotion.ts
+│   │   └── useScrollSpy.ts
+│   ├── types/
+│   │   └── index.ts
+│   └── utils/
+│       ├── formatPrice.ts
+│       └── scrollToSection.ts
+├── App.tsx
+├── app.json
+├── babel.config.js
+├── global.css
+├── index.ts
+├── metro.config.js
+├── nativewind-env.d.ts
+├── package.json
+├── package-lock.json
+├── tailwind.config.js
+├── tsconfig.json
+└── vercel.json
 ```
 
----
-
-## 💻 Getting Started (Windows cmd / PowerShell)
+## Getting Started
 
 ### Prerequisites
 
-- [Node.js](https://nodejs.org/) (v18 or higher recommended)
-- npm or yarn
+- Node.js LTS (v18.x or v20.x recommended)
+- npm (v9.x or higher)
 
-### 1. Installation
+### Installation
+
+Clone the repository and install project dependencies:
 
 ```cmd
+git clone https://github.com/<your-username>/healthify-web.git
+cd healthify-web
 npm install
 ```
 
-### 2. Run Development Server
+### Development Server
+
+Start the local Expo web development server:
 
 ```cmd
 npm run dev
 ```
 
-Open [http://localhost:8081](http://localhost:8081) in your browser.
+Open http://localhost:8081 (or the port indicated in terminal) in your browser.
 
-### 3. TypeScript Typecheck
+### Production Build
 
-```cmd
-npx tsc --noEmit
-```
-
-### 4. Build for Production (Web Export)
+Generate the optimized production static web export:
 
 ```cmd
 npm run build
 ```
 
-This compiles the static web bundle into the `dist/` folder.
+The production output will be generated in the `dist` directory.
 
----
+## Environment Variables
 
-## 🚢 Vercel Deployment
+No environment variables are required to run, build, or deploy this project. All assets, fonts, and configurations are bundled statically, and no API keys or backend secrets are committed or required.
 
-1. Push your repository to GitHub.
-2. In [Vercel](https://vercel.com), click **Add New Project** and import `healthify-web`.
-3. Configure the build settings:
-   - **Framework Preset**: `Other`
-   - **Build Command**: `npx expo export --platform web` (or `npm run build`)
-   - **Output Directory**: `dist`
-   - **Install Command**: `npm install`
-4. Click **Deploy**.
+## Deployment
 
----
+The project is configured for one-click deployment on Vercel:
 
-## 🔒 Environment Variables
+1. Import the repository in the Vercel dashboard.
+2. Configure project build settings:
+   - Framework Preset: Other
+   - Install Command: `npm install`
+   - Build Command: `npm run build` (or `npx expo export --platform web`)
+   - Output Directory: `dist`
+3. Deploy.
 
-No external API keys or secrets are required. The landing page is entirely self-contained and static.
+The included `vercel.json` automatically configures single-page application (SPA) rewrites to `/index.html` and sets immutable long-term caching headers (`max-age=31536000`) for static assets under `/_expo` and `/assets`.
 
----
+## Responsive Design and Accessibility
 
-## 📄 License & Credits
+### Breakpoints Tested
 
-- **Assessment**: Tekcorp Software Engineer Intern Assessment
-- **Brand**: Healthify (Dubai, UAE)
-- **Author**: Muhammad Ahmed Rayyan
+- Mobile: 320px, 360px, 390px, 414px (zero horizontal overflow, hamburger navigation drawer)
+- Tablet: 768px, 820px (multi-column reflow, adjusted typography)
+- Desktop: 1024px, 1280px, 1440px, 1920px (full multi-column grid layouts, container max-width 1200px)
+
+### Accessibility Features
+
+- Semantic landmarks implemented across the DOM (`banner`, `navigation`, `main`, and `contentinfo`).
+- Strict single `<h1>` page heading hierarchy with logical `<h2>` and `<h3>` nested order.
+- Descriptive `aria-label` attributes on interactive icon buttons, navigation links, and the floating WhatsApp trigger.
+- FAQ accordion with `aria-expanded` status attributes and full keyboard navigation (Enter and Space key support).
+- Contrast ratio exceeding 4.5:1 for all text against backgrounds (Forest 900 `#14291F`, Forest 800 `#1F3A2B`, and Ink 700 `#3A4A40` on Cream 50 `#FAFAF5` and Sage 100 `#EEF1E4`).
+- Support for `prefers-reduced-motion` media preferences.
+- Accessible image labels with descriptive alt text on content images and hidden presentation on decorative graphics.
+
+## Image Credits
+
+All photographic assets, meal images, and avatar portraits used throughout this project were generated specifically for this assessment and depict fictional representations and no real people.
+
+## Author
+
+Rayyan Ahmed
+- GitHub: https://github.com/<your-username>
+- LinkedIn: https://linkedin.com/in/<your-username>

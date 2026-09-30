@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, StyleSheet, StyleProp, ViewStyle, ImageStyle } from 'react-native';
+import { View, StyleSheet, StyleProp, ViewStyle, ImageStyle, DimensionValue, ImageSourcePropType } from 'react-native';
 import { Image, ImageContentFit, ImageContentPosition } from 'expo-image';
 
 export interface CoverImageProps {
-  source: any;
+  source: ImageSourcePropType | string | number;
   aspectRatio?: number;
-  height?: number | string;
+  height?: DimensionValue;
   borderRadius?: number;
   borderTopLeftRadius?: number;
   borderTopRightRadius?: number;
@@ -44,7 +44,7 @@ export const CoverImage: React.FC<CoverImageProps> = ({
     overflow: 'hidden',
     position: 'relative',
     ...(aspectRatio !== undefined ? { aspectRatio } : {}),
-    ...(height !== undefined ? { height: height as any } : {}),
+    ...(height !== undefined ? { height } : {}),
     ...(borderRadius !== undefined ? { borderRadius } : {}),
     ...(borderTopLeftRadius !== undefined ? { borderTopLeftRadius } : {}),
     ...(borderTopRightRadius !== undefined ? { borderTopRightRadius } : {}),

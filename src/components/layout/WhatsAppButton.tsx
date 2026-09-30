@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, Platform, Linking } from 'react-native';
+import { Pressable, Platform, Linking, ViewStyle } from 'react-native';
 import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { COLORS } from '../../constants/theme';
 
@@ -19,8 +19,8 @@ export const WhatsAppButton: React.FC = () => {
       onPress={handlePress}
       accessibilityLabel="Chat with Healthify on WhatsApp"
       accessibilityRole="link"
-      style={({ pressed, hovered }: any) => ({
-        position: Platform.OS === 'web' ? ('fixed' as any) : 'absolute',
+      style={({ pressed, hovered }: { pressed: boolean; hovered?: boolean }) => ({
+        position: Platform.OS === 'web' ? ('fixed' as unknown as ViewStyle['position']) : 'absolute',
         bottom: 24,
         right: 24,
         width: 52,

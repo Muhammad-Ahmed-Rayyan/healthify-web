@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, Platform } from 'react-native';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { Eyebrow } from '../ui/Eyebrow';
@@ -59,6 +59,17 @@ export const Faq: React.FC = () => {
                   accessibilityRole="button"
                   accessibilityState={{ expanded: isOpen }}
                   aria-expanded={isOpen}
+                  focusable={true}
+                  {...(Platform.OS === 'web'
+                    ? {
+                        onKeyDown: (e: React.KeyboardEvent) => {
+                          if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            toggleItem(faq.id);
+                          }
+                        },
+                      }
+                    : {})}
                   className="p-6 flex-row items-center justify-between gap-4"
                 >
                   <Text className="text-base font-semibold text-forest-900 flex-1">
