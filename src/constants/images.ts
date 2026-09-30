@@ -1,23 +1,15 @@
-// All image assets — place actual .webp files in assets/images/ before building
-// Required files:
-// hero-bowl.webp, about-bowl.webp, about-chef.webp,
-// service-ready-meals.webp, service-custom-plans.webp, service-weight.webp, service-protein.webp,
-// plans-promo.webp, cta-bg.webp,
-// avatar-sara.webp, avatar-ahmed.webp, avatar-fatima.webp
-
-const placeholder = require('../../assets/images/placeholder.png');
-
 export const IMAGES = {
-  heroBowl: placeholder,
-  aboutBowl: placeholder,
-  aboutChef: placeholder,
-  serviceReadyMeals: placeholder,
-  serviceCustomPlans: placeholder,
-  serviceWeight: placeholder,
-  serviceProtein: placeholder,
-  plansPromo: placeholder,
-  ctaBg: placeholder,
-  avatarSara: placeholder,
-  avatarAhmed: placeholder,
-  avatarFatima: placeholder,
+  heroBowl: require('../../assets/images/Hero_bowl.jpg'),
+  aboutBowl: require('../../assets/images/About_bowl.jpg'),
+  aboutChef: require('../../assets/images/About_chef.jpg'),
+  serviceReadyMeals: require('../../assets/images/Service_ready_meals.jpg'),
+  serviceCustomPlans: require('../../assets/images/Service_custom_plans.jpg'),
+  serviceWeights: require('../../assets/images/Service_weights.jpg'),
+  serviceWeight: require('../../assets/images/Service_weights.jpg'),
+  serviceProtein: require('../../assets/images/Service_protein.jpg'),
+  plansPromo: require('../../assets/images/Plans_promo.jpg'),
+  ctaBg: require('../../assets/images/CTA_bg.jpg'),
+  avatarSara: require('../../assets/images/Avatar_sara.jpg'),
+  avatarAhmed: require('../../assets/images/Avatar_ahmed.jpg'),
+  avatarFatima: require('../../assets/images/Avatar_fatima.jpg'),
 } as const;

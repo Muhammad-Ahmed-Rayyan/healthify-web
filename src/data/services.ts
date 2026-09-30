@@ -15,7 +15,7 @@ export const SERVICES = [
     id: 'weight-management',
     title: 'Weight Management Plans',
     description: 'Delicious meals to support your weight loss or maintenance journey.',
-    imageKey: 'serviceWeight' as const,
+    imageKey: 'serviceWeights' as const,
   },
   {
     id: 'high-protein',
