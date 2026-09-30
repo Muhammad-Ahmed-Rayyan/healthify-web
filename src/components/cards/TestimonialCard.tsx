@@ -19,7 +19,7 @@ export const TestimonialCard: React.FC<Props> = ({ testimonial }) => (
       <View className="flex-row items-center">
         <Image
           source={IMAGES[testimonial.avatarKey]}
-          style={{ width: 40, height: 40, borderRadius: 20, marginRight: 12 }}
+          style={{ width: 40, height: 40, borderRadius: 20, marginRight: 12, overflow: 'hidden' }}
           accessibilityLabel={testimonial.name}
         />
         <View>

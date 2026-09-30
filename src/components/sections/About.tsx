@@ -1,11 +1,12 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text } from 'react-native';
 import { Section } from '../layout/Section';
 import { Container } from '../layout/Container';
 import { Eyebrow } from '../ui/Eyebrow';
 import { SectionHeading } from '../ui/SectionHeading';
 import { Button } from '../ui/Button';
 import { Badge } from '../ui/Badge';
+import { CoverImage } from '../ui/CoverImage';
 import { IMAGES } from '../../constants/images';
 import { SECTION_IDS } from '../../constants/sectionIds';
 import { scrollToSection } from '../../utils/scrollToSection';
@@ -24,23 +25,49 @@ export const About: React.FC = () => {
       <Container className="flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
         {/* Left Column: Overlapping Images */}
         <View className="flex-1 w-full relative min-h-[360px] sm:min-h-[460px] items-center lg:items-start justify-center">
-          {/* Main Large Bowl Image */}
-          <View className="w-[85%] max-w-[420px] aspect-[4/3] rounded-3xl overflow-hidden shadow-xl bg-sage-100">
-            <Image
+          {/* Main Large Bowl Image: radius 24px on wrapper, no square background */}
+          <View
+            className="w-[85%] max-w-[440px]"
+            style={{
+              borderRadius: 24,
+              backgroundColor: 'transparent',
+              shadowColor: COLORS.forest900,
+              shadowOpacity: 0.10,
+              shadowRadius: 20,
+              shadowOffset: { width: 0, height: 8 },
+              elevation: 4,
+            }}
+          >
+            <CoverImage
               source={IMAGES.aboutBowl}
-              className="w-full h-full"
-              resizeMode="cover"
-              accessibilityLabel="Healthy quinoa avocado meal bowl"
+              aspectRatio={4 / 3}
+              borderRadius={24}
+              contentPosition="center"
+              alt="Healthy quinoa avocado meal bowl"
             />
           </View>
 
-          {/* Overlapping Chef Image */}
-          <View className="absolute bottom-0 left-0 w-[45%] max-w-[200px] aspect-square rounded-2xl overflow-hidden border-4 border-white shadow-2xl bg-sage-200">
-            <Image
+          {/* Overlapping Chef Image: radius 20px, white border 4px, no square background */}
+          <View
+            className="absolute bottom-0 left-0 w-[45%] max-w-[210px] z-10"
+            style={{
+              borderRadius: 20,
+              backgroundColor: 'transparent',
+              shadowColor: COLORS.forest900,
+              shadowOpacity: 0.16,
+              shadowRadius: 24,
+              shadowOffset: { width: 0, height: 8 },
+              elevation: 8,
+            }}
+          >
+            <CoverImage
               source={IMAGES.aboutChef}
-              className="w-full h-full"
-              resizeMode="cover"
-              accessibilityLabel="Chef preparing fresh salad"
+              aspectRatio={1}
+              borderRadius={20}
+              borderWidth={4}
+              borderColor="#FFFFFF"
+              contentPosition="center"
+              alt="Chef preparing fresh salad"
             />
           </View>
 

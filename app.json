@@ -1,21 +1,24 @@
 {
   "expo": {
-    "name": "Healthify",
+    "name": "Healthify | Healthy Meals, Happier Lives",
     "slug": "healthify-web",
     "version": "1.0.0",
     "description": "Healthify - Fresh, chef-prepared healthy meal plans delivered to your door in Dubai.",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#FAFAF5"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
+        "backgroundColor": "#1F3A2B",
+        "foregroundImage": "./assets/icon.png"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -23,7 +26,7 @@
       "bundler": "metro",
       "output": "single",
       "favicon": "./assets/favicon.png",
-      "name": "Healthify",
+      "name": "Healthify | Healthy Meals, Happier Lives",
       "shortName": "Healthify",
       "description": "Healthify - Fresh, chef-prepared healthy meal plans delivered to your door in Dubai.",
       "themeColor": "#1F3A2B",

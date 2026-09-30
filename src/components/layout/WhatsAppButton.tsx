@@ -1,6 +1,6 @@
 import React from 'react';
 import { Pressable, Platform, Linking } from 'react-native';
-import { MessageCircle } from 'lucide-react-native';
+import { WhatsAppIcon } from '../ui/WhatsAppIcon';
 import { COLORS } from '../../constants/theme';
 
 const WA_URL = 'https://wa.me/971502626144';
@@ -17,9 +17,9 @@ export const WhatsAppButton: React.FC = () => {
   return (
     <Pressable
       onPress={handlePress}
-      accessibilityLabel="Chat on WhatsApp"
+      accessibilityLabel="Chat with Healthify on WhatsApp"
       accessibilityRole="link"
-      style={{
+      style={({ pressed, hovered }: any) => ({
         position: Platform.OS === 'web' ? ('fixed' as any) : 'absolute',
         bottom: 24,
         right: 24,
@@ -31,13 +31,14 @@ export const WhatsAppButton: React.FC = () => {
         justifyContent: 'center',
         zIndex: 100,
         shadowColor: '#000',
-        shadowOpacity: 0.25,
-        shadowRadius: 12,
+        shadowOpacity: hovered ? 0.35 : 0.25,
+        shadowRadius: hovered ? 16 : 12,
         shadowOffset: { width: 0, height: 4 },
         elevation: 8,
-      }}
+        transform: [{ scale: pressed ? 0.95 : hovered ? 1.05 : 1 }],
+      })}
     >
-      <MessageCircle size={26} color="#fff" fill="#fff" />
+      <WhatsAppIcon size={28} color="#FFFFFF" />
     </Pressable>
   );
 };

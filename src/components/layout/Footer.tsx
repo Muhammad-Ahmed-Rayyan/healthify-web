@@ -5,7 +5,6 @@ import { Container } from './Container';
 import { FOOTER_COLUMNS, SOCIAL_LINKS } from '../../data/footer';
 import { scrollToSection } from '../../utils/scrollToSection';
 import { COLORS } from '../../constants/theme';
-import { Leaf } from 'lucide-react-native';
 
 const FacebookIcon = () => (
   <Svg width={18} height={18} viewBox="0 0 24 24" fill="none" stroke={COLORS.sage200} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -67,12 +66,9 @@ export const Footer: React.FC = () => {
         <View className="flex-row flex-wrap gap-8 pb-12">
           {/* Brand column */}
           <View className="min-w-[200px] flex-1">
-            <View className="flex-row items-center gap-2 mb-4">
-              <Leaf size={20} color={COLORS.olive500} />
-              <View>
-                <Text style={{ fontFamily: 'Aref_Ruqaa', fontSize: 18, color: COLORS.white }}>صحتي</Text>
-                <Text style={{ fontFamily: 'Inter', fontSize: 10, fontWeight: '700', letterSpacing: 3, color: COLORS.sage100 }}>HEALTHIFY</Text>
-              </View>
+            <View className="mb-4">
+              <Text style={{ fontFamily: 'Aref_Ruqaa', fontSize: 18, color: COLORS.white, lineHeight: 22 }}>صحتي</Text>
+              <Text style={{ fontFamily: 'Inter', fontSize: 10, fontWeight: '700', letterSpacing: 3, color: COLORS.sage100 }}>HEALTHIFY</Text>
             </View>
             <Text className="text-sm leading-relaxed mb-6" style={{ color: COLORS.ink500 }}>
               At Healthify, We Believe Healthy Eating Should Be Convenient, Affordable, And Enjoyable.
