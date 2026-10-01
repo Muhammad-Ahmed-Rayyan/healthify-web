@@ -1,3 +1,4 @@
+const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
@@ -6,6 +7,6 @@ const cacheFile = path.join(cacheDir, 'global.css');
 
 fs.mkdirSync(cacheDir, { recursive: true });
 
-if (!fs.existsSync(cacheFile)) {
-  fs.writeFileSync(cacheFile, '');
-}
+execSync(`npx tailwindcss -i ./global.css -o "${cacheFile}"`, {
+  stdio: 'inherit',
+});
